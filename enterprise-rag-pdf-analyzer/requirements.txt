@@ -1,0 +1,38 @@
+# ===========================================================================
+# requirements.txt
+# ---------------------------------------------------------------------------
+# WHY THIS FILE EXISTS:
+#   Streamlit Cloud reads this file and installs every library listed here
+#   before running the app. If a library is missing, the app crashes on start.
+#
+# NOTE ON VERSIONS:
+#   We use ">=" (minimum version) instead of "==" (exact version) so the
+#   installer can always pick a pre-built package that matches the Python
+#   version. This avoids slow, error-prone "compile from source" builds.
+#   The Python version itself is pinned to 3.11 in the file "runtime.txt".
+# ===========================================================================
+
+# --- Web UI ---
+streamlit>=1.40.0
+
+# --- LLM (Groq, open-source models) ---
+groq>=0.13.0
+
+# --- PDF extraction ---
+PyMuPDF>=1.24.0           # imported in code as "fitz" (text, images, metadata)
+pdfplumber>=0.11.0        # table extraction
+
+# --- Embeddings (free, open-source, local) ---
+sentence-transformers>=3.0.0
+
+# --- Vector database (local, free) ---
+chromadb>=0.5.0
+
+# --- Numerical support for MMR / semantic chunking ---
+numpy>=1.26.0,<2.0.0
+
+# --- Exports ---
+fpdf2>=2.8.0              # PDF export of summaries
+
+# --- Environment variables (local development) ---
+python-dotenv>=1.0.0
